@@ -1,0 +1,13 @@
+services:
+  nps:
+    build:
+      context: .
+      dockerfile: Dockerfile.nps
+      args:
+        GOPROXY: ${GOPROXY:-https://goproxy.cn,direct}
+    image: nps-local:latest
+    container_name: nps
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./conf:/conf
