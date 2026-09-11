@@ -6,7 +6,6 @@ services:
       args:
         GOPROXY: ${GOPROXY:-https://goproxy.cn,direct}
     image: npc-local:latest
-    container_name: npc
     restart: unless-stopped
     command:
       - -config=/conf/npc.conf
